@@ -1,0 +1,26 @@
+.reset {
+    button{
+        box-shadow:inset 0px 1px 0px 0px #efdcfb;
+        background:linear-gradient(to left, $--bg-color-x 5%, $--bg-color-o 100%);
+        background-color:#dfbdfa;
+        border-radius:6px;
+        border: none;
+        display:inline-block;
+        cursor:pointer;
+        color:black;
+        font-size:2rem;
+        padding:1.5rem 3rem;
+        text-decoration:none;
+
+        &:hover{
+            background:linear-gradient(to left,  $--bg-color-o 5%, $--bg-color-x 100%);
+            background-color: $--bg-color-x;
+            transition: ease-in 1s;
+        }
+        
+        &:active{
+            position:relative;
+            top:1px;
+        }
+    }
+}
