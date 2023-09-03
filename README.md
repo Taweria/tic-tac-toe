@@ -15,12 +15,11 @@
 
 I did this project during my training at BeCode.org, to further my learning about html, scss and js.
 
+Figma link: https://www.figma.com/file/U2kCfIMHjQvMbEKJUIEvzK/tic-tac-toe?type=design&node-id=2-112&mode=design&t=TCSWvEVoWJiXc9YA-0
+
 ## Used languages
 
 * HTML
 * SCSS
 * Javascript
 
-## Figma Link
-
-https://www.figma.com/file/U2kCfIMHjQvMbEKJUIEvzK/tic-tac-toe?type=design&node-id=2-112&mode=design&t=TCSWvEVoWJiXc9YA-0
