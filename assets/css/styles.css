@@ -125,10 +125,13 @@ main {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   transition: ease-in 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .board .cell:hover {
   border-radius: 10px;
-  background-color: #FFC8C8;
+  background-color: var(--test);
 }
 
 .score {
