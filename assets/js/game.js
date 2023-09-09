@@ -44,6 +44,7 @@ const init = () => {
     arr.forEach(element => {
         element.style.backgroundColor = "";
         element.innerHTML = "";
+        element.dataset.player = "null";
     });
 };
 
@@ -83,30 +84,20 @@ const checkWinningCondition = () => {
 
 const checkHorizontal = () => {
 
-    let playerValue = null,
-        iconCount = 0;
+    for (let i = 0; i < grid.length; i++) {
+        const element = grid[i];
 
-    grid.forEach(line => {
-        
-        line.forEach(element => {
-            
-            if (element.dataset.player) {
+        if (element[0].dataset.player != "null") {
 
-                if (playerValue == element.dataset.player) {
-                    iconCount++
-                } else {
-                    playerValue = element.dataset.player
-                    iconCount = 1
-                }
+            if(element[0].dataset.player == element[1].dataset.player &&
+                element[1].dataset.player == element[2].dataset.player &&
+                element[2].dataset.player == element[0].dataset.player) 
+            {
+                
+                return 'win';
+                
             }
-        });
-    });
-
-    if (iconCount === 3) {
-        return 'win';
-    }
-    else {
-        return '';
+        }
     }
 }
 
@@ -114,13 +105,18 @@ const checkVertical = () => {
 
     for (let i = 0; i < grid[0].length; i++) {
         let line1 = grid[0][i],
-            line2 = grid[0][i],
-            line3 = grid[0][i];
-        
-        if (line1.dataset.player == line2.dataset.player &&
-            line2.dataset.player == line3.dataset.player) 
-        {
-            return 'win';
+            line2 = grid[1][i],
+            line3 = grid[2][i];
+
+        if (line1.dataset.player != "null") {
+
+            if (line1.dataset.player == line2.dataset.player &&
+                line2.dataset.player == line3.dataset.player &&
+                line3.dataset.player == line1.dataset.player) 
+            {
+                
+                    return 'win';
+            }
         }
     }
     
@@ -129,18 +125,22 @@ const checkVertical = () => {
 
 const checkDiagonal = () => {
 
-    if (grid[0][0].dataset.player == grid[1][1].dataset.player &&
-        grid[1][1].dataset.player == grid[2][2].dataset.player) 
-    {
-        return 'win';
-    }
-    else if (grid[0][2].dataset.player == grid[1][1].dataset.player &&
-        grid[1][1].dataset.player == grid[2][0].dataset.player) 
-    {
-        return 'win';
-    }
-    else {
-        return '';
+    if (grid[1][1].dataset.player != "null") {
+
+        if (grid[0][0].dataset.player == grid[1][1].dataset.player &&
+            grid[1][1].dataset.player == grid[2][2].dataset.player &&
+            grid[2][2].dataset.player == grid[0][0].dataset.player) 
+        {
+                
+            return 'win';
+        }
+        else if (grid[0][2].dataset.player == grid[1][1].dataset.player &&
+            grid[1][1].dataset.player == grid[2][0].dataset.player &&
+            grid[2][0].dataset.player == grid[0][2].dataset.player) 
+        {
+            
+            return 'win';
+        }
     }
 }
 
