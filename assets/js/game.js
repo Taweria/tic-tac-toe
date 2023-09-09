@@ -32,13 +32,16 @@ let root         = document.querySelector(':root'),
         [b7, b8, b9]
     ];
 
+
+// For each cell add a listener on click and execute playerPlay on clicked cell
 arr.forEach(element => {
     element.addEventListener("click", () => {
 
         playerPlay(element);
     });
-});
+}); 
 
+// reset variables to start a new game
 const init = () => {
     currentPlayer = 0,
     root.style.setProperty('--test', playerColors[currentPlayer]);
@@ -50,6 +53,7 @@ const init = () => {
     });
 };
 
+// add the player style on cell and switch player + check winning condition. Has win = false block the player when the gane is finished
 const playerPlay = (element) => {
     
     if (hasWin == false) {
@@ -61,6 +65,7 @@ const playerPlay = (element) => {
     }
 }
 
+// switch player and modify the css variable
 const switchPlayer = () => {
 
     if (hasWin == false) {
@@ -78,6 +83,7 @@ const switchPlayer = () => {
     }
 };
 
+// check if the player wins
 const checkWinningCondition = () => {
 
     if (checkHorizontal() == 'win') {
@@ -94,6 +100,7 @@ const checkWinningCondition = () => {
     }
     
 }
+
 
 const checkHorizontal = () => {
 
@@ -157,6 +164,7 @@ const checkDiagonal = () => {
     }
 }
 
+// increase player score and add it to html
 const increasePlayerScore = () => {
 
     if (currentPlayer == 0) {
@@ -169,8 +177,10 @@ const increasePlayerScore = () => {
     }
 }
 
+// add event listener on the first encountered button click to reset game
 document.getElementsByTagName('button')[0].addEventListener('click', () => {
     init();
 })
 
+// initialize the game
 init();
