@@ -11,7 +11,7 @@
 
 ## What's the project?
 
-**It's a tic tac toe with 2 players.**
+**It's a tic tac toe with 2 players. This little game is for desktop/laptop.**
 
 I did this project during my training at BeCode.org, to further my learning about html, scss and js.
 
